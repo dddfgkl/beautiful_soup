@@ -31,3 +31,9 @@ def construct_meta(train_csv, valid_csv, meta_pos):
         outfile.write('{}\n'.format(json.dumps(meta, indent=4)))
 
     print("construct meta over")
+
+def unit_test():
+    print("hello world")
+
+if __name__ == '__main__':
+    pass

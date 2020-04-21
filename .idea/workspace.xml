@@ -46,23 +46,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="md" value="2" />
+          <entry key="md" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="448" />
+          <entry key="md" value="670" />
           <entry key="py" value="186" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="448" />
+          <entry key="Markdown" value="670" />
           <entry key="Python" value="186" />
         </counts>
       </usages-collector>
@@ -70,7 +70,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/text_classification/make_meta.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="700">
@@ -79,6 +79,18 @@
                 <element signature="e#0#9#0" expanded="true" />
                 <marker date="1587487161562" expanded="true" signature="820:847" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/NMT/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="220">
+                <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -111,6 +123,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/text_classification/README.md" />
         <option value="$PROJECT_DIR$/text_classification/make_meta.py" />
+        <option value="$PROJECT_DIR$/NMT/README.md" />
+        <option value="$PROJECT_DIR$/flask_web/README.md" />
       </list>
     </option>
   </component>
@@ -147,11 +161,6 @@
             <path>
               <item name="beautiful_soup" type="b2602c69:ProjectViewProjectNode" />
               <item name="beautiful_soup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="beautiful_soup" type="b2602c69:ProjectViewProjectNode" />
-              <item name="beautiful_soup" type="462c0819:PsiDirectoryNode" />
-              <item name="text_classification" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -197,7 +206,7 @@
     <frame x="-7" y="2" width="1378" height="733" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -230,6 +239,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/text_classification/make_meta.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1587487161562" expanded="true" signature="820:847" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/text_classification/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -240,14 +260,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/text_classification/make_meta.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1587487161562" expanded="true" signature="820:847" ph="..." />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/flask_web/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="120">
+            <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/NMT/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="220">
+            <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -19,19 +19,22 @@ def process_new_text_emotion():
 
     os.system(f"mkdir {tsv_store_dir}/{dataset}")
 
-    data = pd.read_csv(train_pos, delimiter=",", encoding="utf-8")
-    # data = read_csv(chnsenticorp_pos, True)
-    data = data.sample(frac=1)
+    train_data = pd.read_csv(train_pos, delimiter=",", encoding="utf-8")
+    valid_data = pd.read_csv(valid_pos, delimiter=",", encoding="utf-8")
 
-    print(data[:10])
-    if True:
-        return
+    # data = read_csv(chnsenticorp_pos, True)
+    train_data = train_data.sample(frac=1)
+    valid_data = valid_data.sample(frac=1)
+
     # dara = data.columns
-    data.columns = ['labels', 'text']
-    train_len = len(data) // 5 * 3
-    df1 = data.iloc[:train_len]
-    df2 = data.iloc[train_len:]
-    print(len(data))
+    train_data.columns = ['labels', 'text']
+
+    df1 = train_data
+    df2 = valid_data
+
+    df1.loc[df1['labels'] == 'positive'] = 1
+    df1.loc[df1['labels'] == 'negative'] = 0
+
     print(len(df1))
     print(len(df2))
     df1.to_csv(f"{tsv_store_dir}/{dataset}/train.tsv", sep='\t', encoding='utf-8', index=False)

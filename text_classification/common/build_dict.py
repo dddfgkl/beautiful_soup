@@ -1,15 +1,96 @@
 import os
 import pandas as pd
 import numpy as np
+import pickle
+import h5py
 
-train_tsv = ""
-valid_tsv = ""
+tsv_store_dir = "/home/machong/workspace/data/classification"
+train_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "train.tsv")
+valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "valid.tsv")
 
-def build():
-    pass
+h5_train_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5train.h5")
+h5_valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5valid.h5")
+
+# 建立词典
+def build_vocab():
+    train_data = pd.read_csv(train_pos, delimiter=",", encoding="utf-8")
+    valid_data = pd.read_csv(valid_pos, delimiter=",", encoding="utf-8")
+    train_store_file = h5py.File(h5_train_pos, 'w')
+    valid_store_file = h5py.File(h5_valid_pos, 'w')
+
+    vocab_count = {}
+    for sen in train_data['text']:
+        words = sen.strip().split()
+        for word in words:
+            if word in vocab_count.keys():
+                vocab_count[word] += 1
+            else:
+                vocab_count[word] = 1
+
+    for sen in valid_data['text']:
+        words = sen.strip().split()
+        for word in words:
+            if word in vocab_count.keys():
+                vocab_count[word] += 1
+            else:
+                vocab_count[word] = 1
+
+    cnt = 1
+    vocab_dict = {}
+    vocab_dict['oov'] = 0
+    for word in vocab_count.keys():
+        if vocab_count[word] >= 2:
+            vocab_dict[word] = cnt
+            cnt += 1
+
+    # 处理train data，存储成h5形式的文件
+    train_data_array = []
+    train_label_array = []
+    for sen in train_data['text']:
+        words = sen.strip().split()
+        t_data = []
+        for word in words:
+            if word in vocab_dict:
+                t_data.append(vocab_dict[word])
+            else:
+                t_data.append(vocab_dict['oov'])
+        train_data_array.append(t_data)
+
+    train_label_array = np.array([x for x in train_data['labels']])
+    train_data_array = np.array(train_data_array)
+
+    train_store_file['data'] = train_data_array
+    train_store_file['label'] = train_label_array
+    train_store_file['word2cnt'] = vocab_dict
+    train_store_file['cnt2word'] = dict(zip(vocab_dict.values(), vocab_dict.keys()))
+
+
+    # 处理valid data，处理成h5文件的形式
+    valid_data_array = []
+    valid_label_array = []
+    for sen in valid_data['text']:
+        words = sen.strip().split()
+        t_data = []
+        for word in words:
+            if word in vocab_dict:
+                t_data.append(vocab_dict[word])
+            else:
+                t_data.append(vocab_dict['oov'])
+        valid_data_array.append(t_data)
+
+    valid_label_array = np.array([x for x in valid_data['labels']])
+    valid_data_array = np.array(valid_data_array)
+
+    valid_store_file['data'] = valid_data_array
+    valid_store_file['label'] = valid_label_array
+    valid_store_file['word2cnt'] = vocab_dict
+    train_store_file['cnt2word'] = dict(zip(vocab_dict.values(), vocab_dict.keys()))
+
+
+
 
 def unit_test():
-    pass
+    build_vocab()
 
 if __name__ == '__main__':
     unit_test()

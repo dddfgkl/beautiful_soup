@@ -15,8 +15,8 @@ h5_valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5valid.h5")
 def build_vocab():
     train_data = pd.read_csv(train_pos, delimiter="\t", encoding="utf-8")
     valid_data = pd.read_csv(valid_pos, delimiter="\t", encoding="utf-8")
-    train_store_file = h5py.File(h5_train_pos, 'w')
-    valid_store_file = h5py.File(h5_valid_pos, 'w')
+    train_store_file = open(h5_train_pos, 'w')
+    valid_store_file = open(h5_valid_pos, 'w')
 
     vocab_count = {}
     for sen in train_data['text']:
@@ -59,11 +59,12 @@ def build_vocab():
     train_label_array = np.array([x for x in train_data['labels']])
     train_data_array = np.array(train_data_array)
 
-    train_store_file['data'] = train_data_array
-    train_store_file['label'] = train_label_array
-    train_store_file['word2cnt'] = vocab_dict
-    train_store_file['cnt2word'] = dict(zip(vocab_dict.values(), vocab_dict.keys()))
-
+    train_file_pickle = {}
+    train_file_pickle['data'] = train_data_array
+    train_file_pickle['label'] = train_label_array
+    train_file_pickle['word2cnt'] = vocab_dict
+    train_file_pickle['cnt2word'] = dict(zip(vocab_dict.values(), vocab_dict.keys()))
+    pickle.dump(train_file_pickle, train_store_file)
 
     # 处理valid data，处理成h5文件的形式
     valid_data_array = []
@@ -81,11 +82,12 @@ def build_vocab():
     valid_label_array = np.array([x for x in valid_data['labels']])
     valid_data_array = np.array(valid_data_array)
 
-    valid_store_file['data'] = valid_data_array
-    valid_store_file['label'] = valid_label_array
-    valid_store_file['word2cnt'] = vocab_dict
-    train_store_file['cnt2word'] = dict(zip(vocab_dict.values(), vocab_dict.keys()))
-
+    valid_pickle = {}
+    valid_pickle['data'] = valid_data_array
+    valid_pickle['label'] = valid_label_array
+    valid_pickle['word2cnt'] = vocab_dict
+    valid_pickle['cnt2word'] = dict(zip(vocab_dict.values(), vocab_dict.keys()))
+    pickle.dump(valid_store_file, valid_pickle)
 
 
 

@@ -6,7 +6,7 @@ import h5py
 
 tsv_store_dir = "/home/machong/workspace/data/classification"
 train_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "train.tsv")
-valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "valid.tsv")
+valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "test.tsv")
 
 h5_train_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5train.h5")
 h5_valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5valid.h5")

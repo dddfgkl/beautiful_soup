@@ -35,6 +35,7 @@ def process_new_text_emotion():
     print(df1['labels'][:10])
 
     df1['labels'] = df1['labels'].map(lambda x: 1 if str(x) == 'positive' else 0)
+    df2['labels'] = df2['labels'].map(lambda x: 1 if str(x) == 'positive' else 0)
 
     print(len(df1))
     print(len(df2))

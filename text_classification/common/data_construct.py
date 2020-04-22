@@ -32,6 +32,8 @@ def process_new_text_emotion():
     df1 = train_data
     df2 = valid_data
 
+    print(df1['labels'][:10])
+
     df1.loc[df1['labels'] == 'positive'] = 1
     df1.loc[df1['labels'] == 'negative'] = 0
 

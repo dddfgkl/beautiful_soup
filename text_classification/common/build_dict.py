@@ -8,8 +8,8 @@ tsv_store_dir = "/home/machong/workspace/data/classification"
 train_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "train.tsv")
 valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "test.tsv")
 
-h5_train_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5train.h5")
-h5_valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5valid.h5")
+h5_train_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5train.pkl")
+h5_valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5valid.pkl")
 
 # 建立词典
 def build_vocab():
@@ -88,7 +88,6 @@ def build_vocab():
     valid_pickle['word2cnt'] = vocab_dict
     valid_pickle['cnt2word'] = dict(zip(vocab_dict.values(), vocab_dict.keys()))
     pickle.dump(valid_store_file, valid_pickle)
-
 
 
 def unit_test():

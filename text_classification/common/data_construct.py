@@ -1,0 +1,41 @@
+import os
+import pandas as pd
+
+"""
+    DESC: 数据处理模块  
+    Author: macong.ucaser@gmail.com  
+"""
+
+tsv_store_dir = "/home/machong/workspace/data/classification"
+
+# 数据来源:https://github.com/xxxspy/Chinese_conversation_sentiment
+# todo
+def process_new_text_emotion():
+    data_pos = "/home/machong/workspace/sentiment_analysis_textcnn/data/Chinese_conversation_sentiment"
+    train_pos = os.path.join(data_pos, "sentiment_XS_30k.txt")
+    valid_pos = os.path.join(data_pos, "sentiment_XS_test.txt")
+
+    dataset = "Chinese_conversation"
+
+    os.system(f"mkdir {tsv_store_dir}/{dataset}")
+
+    data = pd.read_csv(train_pos, delimiter=",", encoding="utf-8")
+    # data = read_csv(chnsenticorp_pos, True)
+    data = data.sample(frac=1)
+
+    print(data[:10])
+    if True:
+        return
+    # dara = data.columns
+    data.columns = ['labels', 'text']
+    train_len = len(data) // 5 * 3
+    df1 = data.iloc[:train_len]
+    df2 = data.iloc[train_len:]
+    print(len(data))
+    print(len(df1))
+    print(len(df2))
+    df1.to_csv(f"{tsv_store_dir}/{dataset}/train.tsv", sep='\t', encoding='utf-8', index=False)
+    df2.to_csv(f"{tsv_store_dir}/{dataset}/test.tsv", sep='\t', encoding='utf-8', index=False)
+
+if __name__ == '__main__':
+    process_new_text_emotion()

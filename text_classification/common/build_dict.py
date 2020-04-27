@@ -87,7 +87,7 @@ def build_vocab():
     valid_pickle['label'] = valid_label_array
     valid_pickle['word2cnt'] = vocab_dict
     valid_pickle['cnt2word'] = dict(zip(vocab_dict.values(), vocab_dict.keys()))
-    pickle.dump(valid_store_file, valid_pickle)
+    pickle.dump(valid_pickle, valid_store_file)
 
 
 def unit_test():

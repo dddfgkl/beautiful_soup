@@ -15,8 +15,8 @@ h5_valid_pos = os.path.join(tsv_store_dir, "Chinese_conversation", "h5valid.pkl"
 def build_vocab():
     train_data = pd.read_csv(train_pos, delimiter="\t", encoding="utf-8")
     valid_data = pd.read_csv(valid_pos, delimiter="\t", encoding="utf-8")
-    train_store_file = open(h5_train_pos, 'w')
-    valid_store_file = open(h5_valid_pos, 'w')
+    train_store_file = open(h5_train_pos, 'wb+')
+    valid_store_file = open(h5_valid_pos, 'wb+')
 
     vocab_count = {}
     for sen in train_data['text']:

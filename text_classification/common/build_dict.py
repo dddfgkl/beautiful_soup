@@ -39,6 +39,7 @@ def build_vocab():
     vocab_dict = {}
     vocab_dict['oov'] = 0
     for word in vocab_count.keys():
+        # threshold set 2
         if vocab_count[word] >= 2:
             vocab_dict[word] = cnt
             cnt += 1

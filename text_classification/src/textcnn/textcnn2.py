@@ -69,8 +69,8 @@ for epoch in range(100):
     loss = criterion(output, target_batch)
 
     corrects = (torch.max(output, 1)[1].view(target_batch.size()).data == target_batch.data).sum()
-    print(corrects.item())
-    accuracy =  corrects.item() / targets.size()
+    print(corrects.item(), type(corrects.item()))
+    accuracy = corrects.item() / targets.size()
     print(accuracy)
 
     if (epoch + 1) % 2 == 0:

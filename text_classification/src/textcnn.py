@@ -92,7 +92,7 @@ test_batch = Variable(torch.LongTensor(tests))
 print(model(test_batch).data)
 print(model(test_batch).data.max(1, keepdim=True))
 predict = model(test_batch).data.max(1, keepdim=True)[1]
-print(predict)
+print(predict, type(predict))
 if predict[0][0] == 0:
     print(test_text,"is Bad Mean...")
 else:

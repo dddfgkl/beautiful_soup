@@ -27,14 +27,6 @@ num_filters = 3
 vocab_size = len(data["word2cnt"])
 
 
-
-
-input_batch = Variable(torch.LongTensor(inputs)).to(device)
-target_batch = Variable(torch.LongTensor(targets)).to(device)
-
-
-
-
 class TextCNN(nn.Module):
     def __init__(self):
         super(TextCNN, self).__init__()
@@ -62,6 +54,8 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Training
 for epoch in range(100):
+    input_batch = Variable(torch.LongTensor(inputs)).to(device)
+    target_batch = Variable(torch.LongTensor(targets)).to(device)
     optimizer.zero_grad()
     output = model(input_batch)
 

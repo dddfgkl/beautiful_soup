@@ -5,9 +5,12 @@ import torch.optim as optim
 from torch.autograd import Variable
 import torch.nn.functional as F
 import pickle
+import os
 
+# os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 dtype = torch.FloatTensor
 device=torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+print(device)
 
 
 train_f = "/home/machong/workspace/data/classification/Chinese_conversation/h5train.pkl"

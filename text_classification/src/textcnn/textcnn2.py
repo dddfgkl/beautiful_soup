@@ -47,7 +47,8 @@ class TextCNN(nn.Module):
         logit = self.fc1(out)
         return logit
 
-model = TextCNN().to(device)
+model = TextCNN()
+model = model.to(device)
 
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)

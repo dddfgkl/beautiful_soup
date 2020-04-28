@@ -77,7 +77,7 @@ for epoch in range(1000):
 word2cnt = data["word2cnt"]
 cnt2word = data["cnt2word"]
 # Test
-tests = data["data"][:10]
+tests = data["data"][:100]
 
 test_batch = Variable(torch.LongTensor(tests)).to(device)
 

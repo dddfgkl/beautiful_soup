@@ -61,7 +61,7 @@ for epoch in range(100):
     # output : [batch_size, num_classes], target_batch : [batch_size] (LongTensor, not one-hot)
     loss = criterion(output, target_batch)
 
-    corrects = (torch.max(output, 1)[1].view(targets.size()) == targets).sum()
+    corrects = (torch.max(output, 1)[1].view(targets.size()).data == target_batch.data).sum()
     print(corrects)
     accuracy = corrects / targets.size()
 

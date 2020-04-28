@@ -29,8 +29,8 @@ vocab_size = len(data["word2cnt"])
 
 
 
-input_batch = Variable(torch.LongTensor(inputs), device)
-target_batch = Variable(torch.LongTensor(targets), device)
+input_batch = Variable(torch.LongTensor(inputs)).to(device)
+target_batch = Variable(torch.LongTensor(targets)).to(device)
 
 
 

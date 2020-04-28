@@ -59,7 +59,7 @@ def build_vocab():
             else:
                 t_data.append(vocab_dict['oov'])
         if len(t_data) < max_length:
-            t_data = np.pad(t_data, (0, max_length-len(t_data)))
+            t_data = np.pad(t_data, (0, max_length-len(t_data)), mode='constant')
         else:
             t_data = t_data[:max_length]
         train_data_array.append(t_data)
@@ -86,7 +86,7 @@ def build_vocab():
             else:
                 t_data.append(vocab_dict['oov'])
         if len(t_data) < max_length:
-            t_data = np.pad(t_data, (0, max_length-len(t_data)))
+            t_data = np.pad(t_data, (0, max_length-len(t_data)), mode="constant")
         else:
             t_data = t_data[:max_length]
         valid_data_array.append(t_data)

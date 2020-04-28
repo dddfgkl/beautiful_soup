@@ -30,7 +30,7 @@ vocab_size = len(data["word2cnt"])
 class TextCNN(nn.Module):
     def __init__(self):
         super(TextCNN, self).__init__()
-        self.embed = nn.Embedding(vocab_size, embedding_size)
+        self.embed = nn.Embedding(vocab_size, embedding_size).to(device)
         self.conv1ds = nn.ModuleList(
             [nn.Sequential(
                 nn.Conv1d(embedding_size, num_filters, kernel_size=filter_sizes[index]),

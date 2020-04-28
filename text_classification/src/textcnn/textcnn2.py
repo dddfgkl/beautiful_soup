@@ -54,13 +54,13 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Training
-for epoch in range(5000):
+for epoch in range(100):
     optimizer.zero_grad()
     output = model(input_batch)
 
     # output : [batch_size, num_classes], target_batch : [batch_size] (LongTensor, not one-hot)
     loss = criterion(output, target_batch)
-    if (epoch + 1) % 1000 == 0:
+    if (epoch + 1) % 2 == 0:
         print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.6f}'.format(loss))
 
     loss.backward()

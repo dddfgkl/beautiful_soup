@@ -60,13 +60,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="670" />
-          <entry key="py" value="2705" />
+          <entry key="py" value="2963" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="670" />
-          <entry key="Python" value="2705" />
+          <entry key="Python" value="2963" />
         </counts>
       </usages-collector>
     </session>
@@ -101,12 +101,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/text_classification/common/build_dict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="94" column="17" lean-forward="true" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
+            <state relative-caret-position="-1180">
+              <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="79" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1587999786243" expanded="true" signature="482:3058" ph="..." />
-                <marker date="1587999786243" expanded="true" signature="3074:3094" ph="..." />
+                <marker date="1588041755777" expanded="true" signature="482:3489" ph="..." />
+                <marker date="1588041755777" expanded="true" signature="3505:3525" ph="..." />
               </folding>
             </state>
           </provider>
@@ -115,22 +115,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/text_classification/src/textcnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="39" lean-forward="true" selection-end-line="95" selection-end-column="37" />
+            <state relative-caret-position="-40">
+              <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
               <folding>
                 <element signature="e#53#71#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/text_classification/src/textcnn/textcnn.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="65" column="20" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -139,8 +127,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/text_classification/src/textcnn/textcnn2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="300">
+              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -167,9 +155,9 @@
         <option value="$PROJECT_DIR$/NMT/README.md" />
         <option value="$PROJECT_DIR$/flask_web/README.md" />
         <option value="$PROJECT_DIR$/text_classification/common/data_construct.py" />
-        <option value="$PROJECT_DIR$/text_classification/common/build_dict.py" />
         <option value="$PROJECT_DIR$/text_classification/src/textcnn.py" />
         <option value="$PROJECT_DIR$/text_classification/src/textcnn/textcnn.py" />
+        <option value="$PROJECT_DIR$/text_classification/common/build_dict.py" />
         <option value="$PROJECT_DIR$/text_classification/src/textcnn/textcnn2.py" />
       </list>
     </option>
@@ -217,14 +205,13 @@
               <item name="beautiful_soup" type="b2602c69:ProjectViewProjectNode" />
               <item name="beautiful_soup" type="462c0819:PsiDirectoryNode" />
               <item name="text_classification" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="beautiful_soup" type="b2602c69:ProjectViewProjectNode" />
               <item name="beautiful_soup" type="462c0819:PsiDirectoryNode" />
               <item name="text_classification" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="textcnn" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -373,28 +360,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/text_classification/common/build_dict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="94" column="17" lean-forward="true" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1587999786243" expanded="true" signature="482:3058" ph="..." />
-            <marker date="1587999786243" expanded="true" signature="3074:3094" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/text_classification/src/textcnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="39" lean-forward="true" selection-end-line="95" selection-end-column="37" />
-          <folding>
-            <element signature="e#53#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/Anaconda/envs/python3.6/Lib/site-packages/torch/nn/parameter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -432,7 +397,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/text_classification/src/textcnn/textcnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
+        <state relative-caret-position="940">
           <caret line="65" column="20" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -440,10 +405,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/text_classification/src/textcnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+          <folding>
+            <element signature="e#53#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text_classification/common/build_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1180">
+          <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1588041755777" expanded="true" signature="482:3489" ph="..." />
+            <marker date="1588041755777" expanded="true" signature="3505:3525" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/text_classification/src/textcnn/textcnn2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+        <state relative-caret-position="300">
+          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>

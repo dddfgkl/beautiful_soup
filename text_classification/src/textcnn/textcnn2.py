@@ -4,32 +4,23 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.autograd import Variable
 import torch.nn.functional as F
+import pickle
 
 dtype = torch.FloatTensor
 
 # Text-CNN Parameter
 embedding_size = 2 # n-gram
-sequence_length = 3
 num_classes = 2  # 0 or 1
 filter_sizes = [2, 2, 2] # n-gram window
 num_filters = 3
 
-# 3 words sentences (=sequence_length is 3)
-sentences = ["i love you you", "he loves me", "she likes baseball", "i hate you", "sorry for that", "this is awful"]
-labels = [1, 1, 1, 0, 0, 0]  # 1 is good, 0 is not good.
 
-word_list = " ".join(sentences).split()
-word_list = list(set(word_list))
-word_dict = {w: i for i, w in enumerate(word_list)}
-vocab_size = len(word_dict)
+train_f = "/home/machong/workspace/data/classification/Chinese_conversation/h5train.pkl"
+f1 = open(train_f, 'rb')
+data = pickle.load(f1)
+inputs = data["data"]
+targets = data["label"]
 
-inputs = []
-for sen in sentences:
-    inputs.append(np.asarray([word_dict[n] for n in sen.split()]))
-
-targets = []
-for out in labels:
-    targets.append(out) # To using Torch Softmax Loss function
 
 input_batch = Variable(torch.LongTensor(inputs))
 target_batch = Variable(torch.LongTensor(targets))

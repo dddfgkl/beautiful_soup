@@ -19,8 +19,10 @@ def build_vocab():
     valid_store_file = open(h5_valid_pos, 'wb+')
 
     vocab_count = {}
+    max_length = 0
     for sen in train_data['text']:
         words = sen.strip().split()
+        max_length = max(max_length, len(words))
         for word in words:
             if word in vocab_count.keys():
                 vocab_count[word] += 1
@@ -29,6 +31,7 @@ def build_vocab():
 
     for sen in valid_data['text']:
         words = sen.strip().split()
+        max_length = max(max_length, len(words))
         for word in words:
             if word in vocab_count.keys():
                 vocab_count[word] += 1
@@ -55,6 +58,10 @@ def build_vocab():
                 t_data.append(vocab_dict[word])
             else:
                 t_data.append(vocab_dict['oov'])
+        if len(t_data) < max_length:
+            t_data = np.pad(t_data, (0, max_length-len(t_data)))
+        else:
+            t_data = t_data[:max_length]
         train_data_array.append(t_data)
 
     train_label_array = np.array([x for x in train_data['labels']])
@@ -78,6 +85,10 @@ def build_vocab():
                 t_data.append(vocab_dict[word])
             else:
                 t_data.append(vocab_dict['oov'])
+        if len(t_data) < max_length:
+            t_data = np.pad(t_data, (0, max_length-len(t_data)))
+        else:
+            t_data = t_data[:max_length]
         valid_data_array.append(t_data)
 
     valid_label_array = np.array([x for x in valid_data['labels']])

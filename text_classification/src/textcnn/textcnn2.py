@@ -88,7 +88,11 @@ print(test_result)
 
 predict = model(test_batch).data.max(1, keepdim=True)[1]
 
-if predict[0][0] == 0:
-    print(test_text,"is Bad Mean...")
-else:
-    print(test_text,"is Good Mean!!")
+for i in range(len(tests)):
+    sent = " ".join([cnt2word[word] for word in tests[i]])
+    print("### ", sent)
+    if predict[i][0] == 0:
+        print("it is a bad day")
+    else:
+        print("it is a good day")
+    print()

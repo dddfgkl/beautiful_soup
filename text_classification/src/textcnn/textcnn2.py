@@ -62,7 +62,7 @@ for epoch in range(100):
     loss = criterion(output, target_batch)
 
     corrects = (torch.max(output, 1)[1].view(target_batch.size()).data == target_batch.data).sum()
-    accuracy = corrects / len(target_batch.data)
+    accuracy = corrects / targets.size()
 
     if (epoch + 1) % 2 == 0:
         print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.6f}'.format(loss), 'acc = ', accuracy)

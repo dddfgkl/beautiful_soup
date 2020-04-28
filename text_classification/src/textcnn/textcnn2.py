@@ -54,7 +54,7 @@ criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Training
-for epoch in range(100):
+for epoch in range(1000):
     input_batch = Variable(torch.LongTensor(inputs)).to(device)
     target_batch = Variable(torch.LongTensor(targets)).to(device)
     optimizer.zero_grad()
@@ -79,7 +79,7 @@ cnt2word = data["cnt2word"]
 # Test
 tests = data["data"][:10]
 
-test_batch = Variable(torch.LongTensor(tests))
+test_batch = Variable(torch.LongTensor(tests)).to(device)
 
 # Predict
 test_result = model(test_batch).data

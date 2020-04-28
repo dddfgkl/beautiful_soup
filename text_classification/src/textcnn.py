@@ -89,6 +89,8 @@ tests = [np.asarray([word_dict[n] for n in test_text.split()])]
 test_batch = Variable(torch.LongTensor(tests))
 
 # Predict
+print(model(test_batch).data)
+print(test_batch).data.max(1, keepdim=True))
 predict = model(test_batch).data.max(1, keepdim=True)[1]
 if predict[0][0] == 0:
     print(test_text,"is Bad Mean...")

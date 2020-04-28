@@ -50,7 +50,7 @@ class TextCNN(nn.Module):
         out = self.embed(x)
         out = torch.transpose(out, 1, 2)
         out = [conv(out) for conv in self.conv1ds]
-        out = [F.max_pool1d(c_out, kernel_size= c_out.size(2)).seqeeze(2) for c_out in out]
+        out = [F.max_pool1d(c_out, kernel_size= c_out.size(2)).squeeze(2) for c_out in out]
         out = torch.cat(out, 1)
         logit = self.fc1(out)
         return logit

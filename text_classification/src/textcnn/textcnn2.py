@@ -65,7 +65,7 @@ for epoch in range(100):
     accuracy = corrects / len(target_batch.data)
 
     if (epoch + 1) % 2 == 0:
-        print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.6f}'.format(loss), 'acc = ', '{:.6f}'.format(accuracy))
+        print('Epoch:', '%04d' % (epoch + 1), 'cost =', '{:.6f}'.format(loss), 'acc = ', accuracy)
 
     loss.backward()
     optimizer.step()

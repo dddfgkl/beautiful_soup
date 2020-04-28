@@ -7,6 +7,8 @@ import torch.nn.functional as F
 import pickle
 
 dtype = torch.FloatTensor
+device=torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
 
 train_f = "/home/machong/workspace/data/classification/Chinese_conversation/h5train.pkl"
 f1 = open(train_f, 'rb')
@@ -24,8 +26,10 @@ vocab_size = len(data["word2cnt"])
 
 
 
-input_batch = Variable(torch.LongTensor(inputs))
-target_batch = Variable(torch.LongTensor(targets))
+input_batch = Variable(torch.LongTensor(inputs), device)
+target_batch = Variable(torch.LongTensor(targets), device)
+
+
 
 
 class TextCNN(nn.Module):

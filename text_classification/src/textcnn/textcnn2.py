@@ -83,7 +83,7 @@ test_batch = Variable(torch.LongTensor(tests)).to(device)
 
 # Predict
 test_result = model(test_batch).data
-test_gound_truth = data["label"][:10]
+test_gound_truth = data["label"][:100]
 print("test_result:")
 print(test_result)
 
@@ -91,9 +91,7 @@ predict = model(test_batch).data.max(1, keepdim=True)[1]
 
 for i in range(len(tests)):
     sent = " ".join([cnt2word[word] for word in tests[i]])
-    print("### ", sent)
-    if predict[i][0] == 0:
-        print("ground truth", test_gound_truth[i], "it is a bad day")
-    else:
-        print("ground truth", test_gound_truth[i], "it is a good day")
+    # print("### ", sent)
+    if predict[i][0] != test_gound_truth[i]:
+        print(sent)
     print()

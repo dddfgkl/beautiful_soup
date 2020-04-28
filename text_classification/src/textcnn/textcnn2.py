@@ -8,18 +8,20 @@ import pickle
 
 dtype = torch.FloatTensor
 
-# Text-CNN Parameter
-embedding_size = 2 # n-gram
-num_classes = 2  # 0 or 1
-filter_sizes = [2, 2, 2] # n-gram window
-num_filters = 3
-
-
 train_f = "/home/machong/workspace/data/classification/Chinese_conversation/h5train.pkl"
 f1 = open(train_f, 'rb')
 data = pickle.load(f1)
 inputs = data["data"]
 targets = data["label"]
+
+# Text-CNN Parameter
+embedding_size = 2 # n-gram
+num_classes = 2  # 0 or 1
+filter_sizes = [2, 2, 2] # n-gram window
+num_filters = 3
+vocab_size = len(data["word2cnt"])
+
+
 
 
 input_batch = Variable(torch.LongTensor(inputs))
@@ -64,13 +66,20 @@ for epoch in range(5000):
     loss.backward()
     optimizer.step()
 
+word2cnt = data["word2cnt"]
+cnt2word = data["cnt2word"]
 # Test
-test_text = 'sorry hate you'
-tests = [np.asarray([word_dict[n] for n in test_text.split()])]
+tests = data["data"][:10]
+
 test_batch = Variable(torch.LongTensor(tests))
 
 # Predict
+test_result = model(test_batch).data
+print("test_result:")
+print(test_result)
+
 predict = model(test_batch).data.max(1, keepdim=True)[1]
+
 if predict[0][0] == 0:
     print(test_text,"is Bad Mean...")
 else:

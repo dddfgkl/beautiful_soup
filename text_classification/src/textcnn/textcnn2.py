@@ -70,7 +70,7 @@ for epoch in range(100):
 
     corrects = (torch.max(output, 1)[1].view(target_batch.size()).data == target_batch.data).sum()
     print(corrects)
-    accuracy = corrects.int() / target_batch.size()
+    accuracy = int(corrects) / targets.size()
     print(accuracy)
 
     if (epoch + 1) % 2 == 0:

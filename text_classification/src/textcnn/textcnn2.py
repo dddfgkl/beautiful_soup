@@ -15,7 +15,7 @@ filter_sizes = [2, 2, 2] # n-gram window
 num_filters = 3
 
 # 3 words sentences (=sequence_length is 3)
-sentences = ["i love you", "he loves me", "she likes baseball", "i hate you", "sorry for that", "this is awful"]
+sentences = ["i love you you", "he loves me", "she likes baseball", "i hate you", "sorry for that", "this is awful"]
 labels = [1, 1, 1, 0, 0, 0]  # 1 is good, 0 is not good.
 
 word_list = " ".join(sentences).split()

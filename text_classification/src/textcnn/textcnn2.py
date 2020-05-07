@@ -94,4 +94,3 @@ for i in range(len(tests)):
     # print("### ", sent)
     if predict[i][0] != test_gound_truth[i]:
         print(sent)
-    print()

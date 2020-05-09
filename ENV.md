@@ -19,7 +19,24 @@
 - source activate env_name    
 
 #### 4、安装pytorch  
+- 查看cuda版本   
+    cat /usr/local/cuda/version.txt    
+- 查看cudnn版本  
+    cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2   
+    
+
 
 #### 5、安装tensorboardX   
+
+#### 6、linux个人目录下安装tmux   
+[教程 LINK:] https://blog.csdn.net/wildridder/article/details/97154253     
+
+
+
+-----
+
+### more   
+
+
 
 

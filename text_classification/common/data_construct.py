@@ -6,12 +6,16 @@ import pandas as pd
     Author: macong.ucaser@gmail.com  
 """
 
-tsv_store_dir = "/home/machong/workspace/data/classification"
+tsv_store_dir = "/home/datanfs/macong_data/text_classification/trim_data"
 
 # 数据来源:https://github.com/xxxspy/Chinese_conversation_sentiment
 # todo
 def process_new_text_emotion():
+    # 97开发及地址
     data_pos = "/home/machong/workspace/sentiment_analysis_textcnn/data/Chinese_conversation_sentiment"
+
+    # 公共存储地址
+    data_pos = "/home/datanfs/macong_data/text_classification"
     train_pos = os.path.join(data_pos, "sentiment_XS_30k.txt")
     valid_pos = os.path.join(data_pos, "sentiment_XS_test.txt")
 
